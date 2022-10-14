@@ -3,6 +3,8 @@ import Home from '../pages/Home';
 import Mutant from '../pages/Mutant';
 import Places from '../pages/Places';
 import Vehicles from '../pages/Vehicles';
+import PlaceDetails from '../pages/PlaceDetails';
+import VehicleDetails from '../pages/VehicleDetails';
 
 export const router = createBrowserRouter([
   {
@@ -20,5 +22,13 @@ export const router = createBrowserRouter([
   {
     path: 'vehicles',
     element: <Vehicles />,
+  },
+  {
+    path: 'places/:id',
+    element: <PlaceDetails />,
+  },
+  {
+    path: 'vehicles/:id',
+    element: <VehicleDetails />,
   },
 ]);

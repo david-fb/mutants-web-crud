@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { getAllVehicles } from '../services/api/vehicles';
+import { Link } from 'react-router-dom';
 import Layout from '../components/Layout';
 
 import { DataGrid } from '@mui/x-data-grid';
@@ -12,7 +13,7 @@ const columns = [
     headerName: 'Acciones',
     renderCell: (params) => (
       <div className="ActionButtons">
-        <button>Ver</button>
+        <Link to={`/vehicles/${params.row.id}`}>Ver</Link>
         <button>Edit</button>
         <button className="DeleteButton">Delete</button>
       </div>
