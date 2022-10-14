@@ -11,4 +11,18 @@ export const END_POINTS = {
     update: (id) => `${API_URL}/mutants/${id}`,
     deleteById: (id) => `${API_URL}/mutants/${id}`,
   },
+  places: {
+    getAll: () => `${API_URL}/places/`,
+    getById: (id) => `${API_URL}/places/${id}`,
+    create: () => `${API_URL}/places/`,
+    update: (id) => `${API_URL}/places/${id}`,
+    deleteById: (id) => `${API_URL}/places/${id}`,
+  },
+  vehicles: {
+    getAll: () => `${API_URL}/vehicles/`,
+    getById: (id) => `${API_URL}/vehicles/${id}`,
+    create: () => `${API_URL}/vehicles/`,
+    update: (id) => `${API_URL}/vehicles/${id}`,
+    deleteById: (id) => `${API_URL}/vehicles/${id}`,
+  },
 };
