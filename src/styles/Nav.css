@@ -1,0 +1,14 @@
+.Nav {
+    background: papayawhip;
+    padding: 10px  20px;
+}
+
+.Nav__menu {
+    list-style: none;
+    display: flex;
+    gap: 16px;
+}
+
+.Nav__menu__link-active {
+    font-weight: bold;
+}

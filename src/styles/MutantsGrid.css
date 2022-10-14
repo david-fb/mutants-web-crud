@@ -1,0 +1,35 @@
+.MutantsGrid {
+    width: 90%;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 10px
+}
+
+.MutantsGrid__item {
+    height: 400px;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.MutantsGrid__item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all ease .6s;
+}
+
+.MutantsGrid__item:hover img{
+    transform: scale(1.1) rotate(-5deg);
+}
+
+.MutantsGrid__item-info{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    translate: -50% 0;
+    z-index: 9;
+    text-align: center;
+}

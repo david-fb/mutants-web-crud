@@ -21,6 +21,18 @@
   box-sizing: border-box;
 }
 
+#root {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: #242424;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
