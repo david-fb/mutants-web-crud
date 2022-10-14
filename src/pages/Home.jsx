@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { getAllMutants } from '../services/api/mutants';
 import MutantsGrid from '../components/MutantsGrid';
 import Layout from '../components/Layout';
+import Search from '../components/Search';
 import '../styles/Home.css';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
   return (
     <Layout>
       <h1>Mutants</h1>
+      <Search />
       <MutantsGrid mutants={mutants.rows} />
     </Layout>
   );
