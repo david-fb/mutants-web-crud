@@ -25,3 +25,8 @@ export const deleteMutant = async (id) => {
   const res = await axios.patch(END_POINTS.mutants.deleteById(id));
   return res.data;
 };
+
+export const getMutantByAny = async (query) => {
+  const res = await axios.get(END_POINTS.mutants.getByAny(query));
+  return res.data;
+};
