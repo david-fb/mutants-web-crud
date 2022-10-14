@@ -15,7 +15,7 @@ const LINKS = [
     end: true,
   },
   {
-    id: 2,
+    id: 3,
     title: 'Vehiculos',
     url: '/vehicles',
     end: true,
