@@ -33,6 +33,24 @@ a {
   color: #242424;
 }
 
+button {
+  border: none;
+  outline: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  font-weight: bold;
+}
+
+input {
+  padding: 8px 16px;
+  border-radius: 5px;
+  border: 1px solid #e3ecff;
+  color: #000;
+  outline: none;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
