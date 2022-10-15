@@ -1,0 +1,11 @@
+.CreateEditMutant {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.CreateEditMutant form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

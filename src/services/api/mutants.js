@@ -12,7 +12,7 @@ export const getMutantById = async (id) => {
 };
 
 export const createMutant = async (data) => {
-  const res = await axios.patch(END_POINTS.mutants.create(), { ...data });
+  const res = await axios.post(END_POINTS.mutants.create(), { ...data });
   return res.data;
 };
 
@@ -22,7 +22,7 @@ export const updateMutant = async (id, changes) => {
 };
 
 export const deleteMutant = async (id) => {
-  const res = await axios.patch(END_POINTS.mutants.deleteById(id));
+  const res = await axios.delete(END_POINTS.mutants.deleteById(id));
   return res.data;
 };
 

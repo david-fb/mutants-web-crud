@@ -3,6 +3,7 @@ import { getAllMutants } from '../services/api/mutants';
 import MutantsGrid from '../components/MutantsGrid';
 import Layout from '../components/Layout';
 import Search from '../components/Search';
+import { Link } from 'react-router-dom';
 import '../styles/Home.css';
 
 function App() {
@@ -20,7 +21,10 @@ function App() {
     <Layout>
       <h1>Mutants</h1>
       <Search />
-      <MutantsGrid mutants={mutants.rows} />
+      <section>
+        <Link to="/mutant/create">Agregar</Link>
+        <MutantsGrid mutants={mutants.rows} />
+      </section>
     </Layout>
   );
 }

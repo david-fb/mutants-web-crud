@@ -7,6 +7,7 @@ import PlaceDetails from '../pages/PlaceDetails';
 import VehicleDetails from '../pages/VehicleDetails';
 import PowerDetails from '../pages/PowerDetails';
 import Powers from '../pages/Powers';
+import CreateEditMutant from '../pages/CreateEditMutant';
 
 export const router = createBrowserRouter([
   {
@@ -16,6 +17,14 @@ export const router = createBrowserRouter([
   {
     path: 'mutant/:id',
     element: <Mutant />,
+  },
+  {
+    path: 'mutant/create',
+    element: <CreateEditMutant />,
+  },
+  {
+    path: 'mutant/edit/:id',
+    element: <CreateEditMutant />,
   },
   {
     path: 'places',
