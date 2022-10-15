@@ -1,0 +1,84 @@
+.Modal {
+    position: relative;
+    background: #f6f9ff;
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top: 30px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    gap: 10px;
+}
+
+.CloseButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: none;
+    border: none;
+}
+
+.CloseButton svg{
+    fill: rgb(255, 51, 0);
+}
+
+.CloseButton:hover svg{
+    fill: rgb(255, 51, 0);
+    transform: scale(1.1);
+}
+
+.CloseButton:hover {
+    background: none;
+    border: none;
+}
+
+
+.Modal form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.inputsContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(200px, 240px));
+    justify-content: center;
+    gap: 16px;
+}
+
+.inputsContainer label {
+    display: flex;
+    flex-direction: column;
+}
+
+.buttonsContainer {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.CancelButton {
+    background: rgb(255, 51, 0);
+    color: #fff;
+}
+
+.CancelButton:hover {
+    color: rgb(255, 51, 0);
+    border: 1px solid rgb(255, 51, 0);
+    background: #fff;
+}
+
+.SaveButton {
+    background: rgb(0, 102, 255);
+    color: #fff;
+}
+
+.SaveButton:hover {
+    color: rgb(0, 102, 255);
+    border: 1px solid rgb(0, 102, 255);
+    background: #fff;
+}
