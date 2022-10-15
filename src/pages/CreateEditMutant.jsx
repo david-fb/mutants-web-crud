@@ -6,7 +6,19 @@ import { getAllVehicles } from '../services/api/vehicles';
 import { getAllPowers } from '../services/api/powers';
 import CloseIcon from '../assets/CloseIcon';
 import Layout from '../components/Layout';
+import Swal from 'sweetalert2';
 import '../styles/CreateEditMutant.css';
+// import { toast } from 'react-toastify';
+
+const showSuccessAlert = (msg) => {
+  Swal.fire({
+    position: 'top-end',
+    icon: 'success',
+    title: msg,
+    showConfirmButton: false,
+    timer: 1500,
+  });
+};
 
 export default function CreateEditMutant() {
   let { id } = useParams();
@@ -112,8 +124,11 @@ export default function CreateEditMutant() {
 
     if (isEdit) {
       await updateMutant(id, mutantData);
+      showSuccessAlert('Actualizado exitosamente!');
+      navigate(-1);
     } else {
       await createMutant(mutantData);
+      showSuccessAlert('Creado exitosamente!');
       navigate('/');
     }
   };
