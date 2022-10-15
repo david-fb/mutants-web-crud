@@ -24,6 +24,7 @@ export default function CreateEditMutant() {
   const navigate = useNavigate();
 
   const [isEdit, setIsEdit] = useState(false);
+  const title = isEdit ? 'Actualizar' : 'Crear';
 
   const [places, setPlaces] = useState([]);
   const [vehicles, setVehicles] = useState([]);
@@ -32,11 +33,15 @@ export default function CreateEditMutant() {
   const powerRef = useRef();
 
   const getMutant = async () => {
-    const res = await getMutantById(id);
-    if (res.vehicleId === null) {
-      res.vehicleId = undefined;
+    try {
+      const res = await getMutantById(id);
+      if (res.vehicleId === null) {
+        res.vehicleId = undefined;
+      }
+      setMutant(res);
+    } catch (error) {
+      navigate('/');
     }
-    setMutant(res);
   };
   const getPlaces = async () => {
     const res = await getAllPlaces();
@@ -116,7 +121,10 @@ export default function CreateEditMutant() {
   return (
     <Layout>
       <section className="CreateEditMutant">
-        <Link to={'/'}>Volver</Link>
+        <Link className="Create__back-link" to={-1}>
+          Volver
+        </Link>
+        <h1 className="Create__title">{title} Mutante</h1>
         <form onSubmit={handleSubmit}>
           <label>
             Nombre:
@@ -172,32 +180,36 @@ export default function CreateEditMutant() {
             <input type="text" name="image" value={mutant.image} onChange={(e) => handleOnChange(e.target.value, 'image')} required />
           </label>
 
-          <label>
-            Poderes:
-            <select name="vehicleId" ref={powerRef}>
-              {powers.map((power) => (
-                <option key={`select-power-${power.id}`} value={power.id}>
-                  {power.name}
-                </option>
-              ))}
-            </select>
-            <button type="button" onClick={handleAddPower}>
-              Agregar
-            </button>
-          </label>
+          <div className="Power__select">
+            <label htmlFor="powers">Poderes:</label>
+            <div>
+              <select name="powers" ref={powerRef}>
+                {powers.map((power) => (
+                  <option key={`select-power-${power.id}`} value={power.id}>
+                    {power.name}
+                  </option>
+                ))}
+              </select>
+              <button type="button" onClick={handleAddPower}>
+                Agregar
+              </button>
+            </div>
+          </div>
 
-          <div>
+          <div className="Form__powers">
             {mutant.powers.map((power) => (
               <span key={`mutant-power-${power.id}`}>
                 {power.name}{' '}
                 <button type="button" onClick={() => handleRemovePower(power.id)}>
-                  <CloseIcon width={14} height={14} />
+                  <CloseIcon width={18} height={18} color="#fff" />
                 </button>
               </span>
             ))}
           </div>
 
-          <button type="submit">Guardar</button>
+          <button className="Form__save-btn" type="submit">
+            Guardar
+          </button>
         </form>
       </section>
     </Layout>
