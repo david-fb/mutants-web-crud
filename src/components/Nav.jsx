@@ -33,8 +33,8 @@ export default function Nav() {
     <nav className="Nav">
       <ul className="Nav__menu">
         {LINKS.map((link) => (
-          <li key={`menu-item-${link.id}`} className="Nav__menu">
-            <NavLink to={link.url} end={link.end} className={({ isActive }) => (isActive ? 'Nav__menu__link-active' : undefined)}>
+          <li key={`menu-item-${link.id}`} className="Nav__menu__item">
+            <NavLink to={link.url} end={link.end} className={({ isActive }) => (isActive ? 'active' : undefined)}>
               {link.title}
             </NavLink>
           </li>

@@ -1,14 +1,22 @@
 .Nav {
-    background: papayawhip;
-    padding: 10px  20px;
+    padding: 10px 20px;
+    margin-top: 20px;
 }
 
 .Nav__menu {
     list-style: none;
     display: flex;
     gap: 16px;
+    justify-content: flex-start;
 }
 
-.Nav__menu__link-active {
+.Nav__menu__item a {
+    color: rgb(253, 207, 2);
+    font-size: 18px;
+    border-bottom: 1px solid transparent;
+}
+
+.Nav__menu__item .active {
     font-weight: bold;
+    border-bottom: 1px solid rgb(253, 207, 2);
 }
