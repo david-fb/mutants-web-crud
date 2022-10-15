@@ -2,7 +2,6 @@
 import React, { forwardRef, useRef } from 'react';
 import { createPlace, updatePlace } from '../services/api/places';
 import CloseIcon from '../assets/CloseIcon';
-import '../styles/Modal.css';
 
 const ModalPlace = forwardRef((props, ref) => {
   const form = useRef();

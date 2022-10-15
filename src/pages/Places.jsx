@@ -6,7 +6,6 @@ import Modal from '@mui/material/Modal';
 import Layout from '../components/Layout';
 import { DataGrid } from '@mui/x-data-grid';
 import Swal from 'sweetalert2';
-import 'sweetalert2/src/sweetalert2.scss';
 
 export default function Places() {
   const [places, setPlaces] = useState([]);
@@ -101,7 +100,7 @@ export default function Places() {
 
   return (
     <Layout>
-      <Modal open={open} onClose={handleClose} aria-labelledby="modal-user" aria-describedby="modal-user-save-edit">
+      <Modal open={open} onClose={handleClose} aria-labelledby="modal-place" aria-describedby="modal-place-save-edit">
         <ModalPlace isEdit={isEdit} handleClose={handleClose} place={selectedItem} refreshPlace={getPlaces} />
       </Modal>
       <h1>Lugares</h1>
@@ -110,7 +109,7 @@ export default function Places() {
         <button onClick={handleOpen}>Agregar</button>
       </div>
       <div style={{ width: '500px', height: '400px' }}>
-        <DataGrid rows={rows} columns={columns} rowsPerPageOptions={[5, 10, 25]} pageSize={pageSize} onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}/>
+        <DataGrid rows={rows} columns={columns} rowsPerPageOptions={[5, 10, 25]} pageSize={pageSize} onPageSizeChange={(newPageSize) => setPageSize(newPageSize)} />
       </div>
     </Layout>
   );
