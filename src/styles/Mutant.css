@@ -113,3 +113,26 @@
     color: rgb(253, 52, 2);
     border-color: rgb(253, 52, 2);
 }
+
+@media (max-width: 650px) {
+    .Mutant__Content {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 320px));
+    }
+    .Mutant__Content__title {
+        font-size: 40px;
+    }
+    
+    .Mutant__Content__subtitle {
+        font-size: 25px;
+    }
+    .Mutant__Content__info {
+        font-size: 18px;
+    }
+    
+    .Mutant__content__info-property {
+        font-size: 24px;
+    }
+    .Mutant__Content__info-powers span{
+        font-size: 14px;
+    }
+}
