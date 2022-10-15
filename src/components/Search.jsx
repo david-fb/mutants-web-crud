@@ -1,26 +1,8 @@
-import { useState, useEffect } from 'react';
-import { getMutantByAny } from '../services/api/mutants';
 import SearchIcon from '../assets/SearchIcon';
 import CloseIcon from '../assets/CloseIcon';
 import '../styles/Search.css';
 
-export default function Search() {
-  const [query, setQuery] = useState('');
-
-  const searchMutants = async () => {
-    const res = await getMutantByAny(query);
-    console.log(res);
-  };
-
-  useEffect(() => {
-    if (!query) return;
-    let timer = setTimeout(async () => {
-      searchMutants();
-    }, 500);
-
-    return () => clearTimeout(timer);
-  }, [query]);
-
+export default function Search({ query, setQuery }) {
   const handleClear = () => setQuery('');
 
   return (
