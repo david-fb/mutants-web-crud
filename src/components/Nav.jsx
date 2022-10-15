@@ -16,8 +16,14 @@ const LINKS = [
   },
   {
     id: 3,
-    title: 'Vehiculos',
+    title: 'Vehículos',
     url: '/vehicles',
+    end: true,
+  },
+  {
+    id: 4,
+    title: 'Poderes',
+    url: '/powers',
     end: true,
   },
 ];

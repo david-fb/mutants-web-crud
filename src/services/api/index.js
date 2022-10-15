@@ -25,4 +25,11 @@ export const END_POINTS = {
     update: (id) => `${API_URL}/vehicles/${id}`,
     deleteById: (id) => `${API_URL}/vehicles/${id}`,
   },
+  powers: {
+    getAll: () => `${API_URL}/powers/`,
+    getById: (id) => `${API_URL}/powers/${id}`,
+    create: () => `${API_URL}/powers/`,
+    update: (id) => `${API_URL}/powers/${id}`,
+    deleteById: (id) => `${API_URL}/powers/${id}`,
+  },
 };

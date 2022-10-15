@@ -5,6 +5,8 @@ import Places from '../pages/Places';
 import Vehicles from '../pages/Vehicles';
 import PlaceDetails from '../pages/PlaceDetails';
 import VehicleDetails from '../pages/VehicleDetails';
+import PowerDetails from '../pages/PowerDetails';
+import Powers from '../pages/Powers';
 
 export const router = createBrowserRouter([
   {
@@ -24,11 +26,19 @@ export const router = createBrowserRouter([
     element: <Vehicles />,
   },
   {
+    path: 'powers',
+    element: <Powers />,
+  },
+  {
     path: 'places/:id',
     element: <PlaceDetails />,
   },
   {
     path: 'vehicles/:id',
     element: <VehicleDetails />,
+  },
+  {
+    path: 'powers/:id',
+    element: <PowerDetails />,
   },
 ]);
