@@ -7,7 +7,8 @@
     align-items: center;
     border-radius: 20px;
     padding: 0 8px;
-    border: 1px solid #cecece;
+    border: 1px solid #424242;
+    background: #242424;
 }
 
 .Search input {
@@ -17,6 +18,9 @@
     border: none;
     outline: none;
     margin-left: 8px;
+    color: rgba(250, 250, 250, .8);
+    font-size: 18px;
+    padding: 0;
 }
 
 .Search button {
@@ -25,4 +29,5 @@
     border: none;
     outline: none;
     cursor: pointer;
+    padding: 0;
 }

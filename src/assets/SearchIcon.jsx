@@ -1,6 +1,6 @@
-export default function SearchIcon({ width = 32, height = 32 }) {
+export default function SearchIcon({ width = 32, height = 32, color = 'black' }) {
   return (
-    <svg version="1.1" width={width} height={height} id="Capa_1" x="0px" y="0px" viewBox="0 0 487.95 487.95" style={{ enableBackground: 'new 0 0 487.95 487.95' }} xmlSpace="preserve">
+    <svg version="1.1" width={width} height={height} fill={color} id="Capa_1" x="0px" y="0px" viewBox="0 0 487.95 487.95" style={{ enableBackground: 'new 0 0 487.95 487.95' }} xmlSpace="preserve">
       <g>
         <g>
           <path

@@ -25,11 +25,11 @@ export default function Search() {
 
   return (
     <div className="Search">
-      <SearchIcon width={25} height={25} />
+      <SearchIcon width={25} height={25} color="#727272" />
       <input type="text" name="mutantSearch" value={query} onChange={(e) => setQuery(e.target.value)} />
       {query && (
         <button onClick={handleClear}>
-          <CloseIcon />
+          <CloseIcon color="#727272" />
         </button>
       )}
     </div>
