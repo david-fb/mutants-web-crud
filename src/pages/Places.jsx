@@ -6,6 +6,7 @@ import Modal from '@mui/material/Modal';
 import Layout from '../components/Layout';
 import { DataGrid } from '@mui/x-data-grid';
 import Swal from 'sweetalert2';
+import '../styles/ListPages.css';
 
 export default function Places() {
   const [places, setPlaces] = useState([]);
@@ -88,13 +89,13 @@ export default function Places() {
       renderCell: (params) => (
         <div className="ActionButtons">
           <Link to={`/places/${params.row.id}`}>Ver</Link>
-          <button onClick={() => handleEditClick(params)}>Edit</button>
+          <button onClick={() => handleEditClick(params)}>Editar</button>
           <button onClick={() => handleDeleteClick(params)} className="DeleteButton">
-            Delete
+            Eliminar
           </button>
         </div>
       ),
-      width: 210,
+      width: 250,
     },
   ];
 
@@ -103,14 +104,19 @@ export default function Places() {
       <Modal open={open} onClose={handleClose} aria-labelledby="modal-place" aria-describedby="modal-place-save-edit">
         <ModalPlace isEdit={isEdit} handleClose={handleClose} place={selectedItem} refreshPlace={getPlaces} />
       </Modal>
-      <h1>Lugares</h1>
-      <div>
-        <input type="text" name="" id="" onChange={handleOnChange} />
-        <button onClick={handleOpen}>Agregar</button>
-      </div>
-      <div style={{ width: '500px', height: '400px' }}>
-        <DataGrid rows={rows} columns={columns} rowsPerPageOptions={[5, 10, 25]} pageSize={pageSize} onPageSizeChange={(newPageSize) => setPageSize(newPageSize)} />
-      </div>
+      <article className="List__container">
+        <h1 className="List__container__title">Lugares</h1>
+        <div className="List__container__control">
+          <label>
+            Buscar:
+            <input type="text" name="" id="" onChange={handleOnChange} />
+          </label>
+          <button onClick={handleOpen}>Agregar</button>
+        </div>
+        <div className="List__container__table">
+          <DataGrid rows={rows} columns={columns} rowsPerPageOptions={[5, 10, 25]} pageSize={pageSize} onPageSizeChange={(newPageSize) => setPageSize(newPageSize)} />
+        </div>
+      </article>
     </Layout>
   );
 }
