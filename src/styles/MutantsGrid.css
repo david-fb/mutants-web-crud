@@ -1,9 +1,8 @@
 .MutantsGrid {
-    width: 90%;
-    max-width: 1200px;
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 10px
+    gap: 10px;
 }
 
 .MutantsGrid__item {
@@ -21,15 +20,58 @@
     transition: all ease .6s;
 }
 
+.MutantsGrid__item:hover {
+    border: 1px solid #FFF;
+}
+
 .MutantsGrid__item:hover img{
     transform: scale(1.1) rotate(-5deg);
 }
 
 .MutantsGrid__item-info{
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 50%;
     translate: -50% 0;
     z-index: 9;
     text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    width: 100%;
+    padding: 10px 0;
+    background: #24242477;
+}
+
+.MutantsGrid__item-info__type {
+    font-size: 12px;
+    position: relative;
+}
+
+.MutantsGrid__item-info__type::after, .MutantsGrid__item-info__type::before {
+    content: "";
+    position: absolute;
+    width: 35%;
+    height: 1px;
+    border: 1px solid #FFF;
+    top: 50%;
+    translate: 0 -50%;
+}
+
+.MutantsGrid__item-info__type::after {
+    left: 10px;
+}
+
+.MutantsGrid__item-info__type::before {
+    right: 10px;
+}
+
+.MutantsGrid__item-info__alias {
+    font-size: 24px;
+    margin-top: 5px;
+}
+
+.MutantsGrid__item-info__name {
+    font-size: 16px;
+    color: rgba(250, 250, 250, .8);
+    line-height: 1;
 }
