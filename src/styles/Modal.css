@@ -72,6 +72,10 @@
     background: #fff;
 }
 
+.Modal {
+    background: #242424;
+    border: 1px solid #121212;
+}
 .SaveButton {
     background: rgb(0, 102, 255);
     color: #fff;
