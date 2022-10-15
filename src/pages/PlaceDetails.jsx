@@ -1,7 +1,9 @@
 import { useParams, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getPlaceById } from '../services/api/places';
+import MutantsGrid from '../components/MutantsGrid';
 import Layout from '../components/Layout';
+import '../styles/DetailsPages.css';
 
 export default function PlaceDetails() {
   let { id } = useParams();
@@ -17,11 +19,16 @@ export default function PlaceDetails() {
 
   return (
     <Layout>
-      <section>
-        <Link to={'/places'}>Volver</Link>
-        <h1>Place {id}</h1>
-        {place.name}
-      </section>
+      <article className="Details__container">
+        <Link className="Details__back-link" to={-1}>
+          Volver
+        </Link>
+        <h1 className="Details__container__title">{place.name}</h1>
+        <p>Mutantes que operan en {place.name}:</p>
+        <section className="Details__container__mutants">
+          <MutantsGrid mutants={place?.mutants} />
+        </section>
+      </article>
     </Layout>
   );
 }

@@ -1,7 +1,7 @@
 import '../styles/MutantsGrid.css';
 import { Link } from 'react-router-dom';
 
-export default function MutantsGrid({ mutants }) {
+export default function MutantsGrid({ mutants = [] }) {
   const items = mutants.map((mutant) => {
     const type = mutant?.type === 'hero' ? 'Héroe' : 'Villano';
     return (
