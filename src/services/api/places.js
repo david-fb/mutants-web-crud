@@ -12,7 +12,7 @@ export const getPlaceById = async (id) => {
 };
 
 export const createPlace = async (data) => {
-  const res = await axios.patch(END_POINTS.places.create(), { ...data });
+  const res = await axios.post(END_POINTS.places.create(), { ...data });
   return res.data;
 };
 
@@ -22,6 +22,6 @@ export const updatePlace = async (id, changes) => {
 };
 
 export const deletePlace = async (id) => {
-  const res = await axios.patch(END_POINTS.places.deleteById(id));
+  const res = await axios.delete(END_POINTS.places.deleteById(id));
   return res.data;
 };

@@ -12,7 +12,7 @@ export const getVehicleById = async (id) => {
 };
 
 export const createVehicle = async (data) => {
-  const res = await axios.patch(END_POINTS.vehicles.create(), { ...data });
+  const res = await axios.post(END_POINTS.vehicles.create(), { ...data });
   return res.data;
 };
 
@@ -22,6 +22,6 @@ export const updateVehicle = async (id, changes) => {
 };
 
 export const deleteVehicle = async (id) => {
-  const res = await axios.patch(END_POINTS.vehicles.deleteById(id));
+  const res = await axios.delete(END_POINTS.vehicles.deleteById(id));
   return res.data;
 };
