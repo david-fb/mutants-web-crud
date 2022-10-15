@@ -19,10 +19,13 @@ function App() {
 
   return (
     <Layout>
-      <h1>Mutants</h1>
+      <h1 className="Home__title">mutantes</h1>
+      <h2 className="Home__subtitle">Base de Datos</h2>
       <Search />
-      <section>
-        <Link to="/mutant/create">Agregar</Link>
+      <section className="Home__content">
+        <Link className="Home__add-link" to="/mutant/create">
+          Agregar
+        </Link>
         <MutantsGrid mutants={mutants.rows} />
       </section>
     </Layout>
