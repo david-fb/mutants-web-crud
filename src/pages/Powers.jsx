@@ -88,29 +88,34 @@ export default function Powers() {
       renderCell: (params) => (
         <div className="ActionButtons">
           <Link to={`/powers/${params.row.id}`}>Ver</Link>
-          <button onClick={() => handleEditClick(params)}>Edit</button>
+          <button onClick={() => handleEditClick(params)}>Editar</button>
           <button onClick={() => handleDeleteClick(params)} className="DeleteButton">
-            Delete
+            Eliminar
           </button>
         </div>
       ),
-      width: 210,
+      width: 250,
     },
   ];
 
   return (
     <Layout>
-      <h1>Vehicles</h1>
       <Modal open={open} onClose={handleClose} aria-labelledby="modal-power" aria-describedby="modal-power-save-edit">
         <ModalPower isEdit={isEdit} handleClose={handleClose} power={selectedItem} refreshPower={getPowers} />
       </Modal>
-      <div>
-        <input type="text" name="vehicleSearch" onChange={handleOnChange} />
-        <button onClick={handleOpen}>Agregar</button>
-      </div>
-      <div style={{ width: '500px', height: '500px' }}>
-        <DataGrid rows={rows} columns={columns} rowsPerPageOptions={[5, 10, 25]} pageSize={pageSize} onPageSizeChange={(newPageSize) => setPageSize(newPageSize)} />
-      </div>
+      <article className="List__container">
+        <h1 className="List__container__title">Poderes</h1>
+        <div className="List__container__control">
+          <label>
+            Buscar:
+            <input type="text" name="powerSearch" onChange={handleOnChange} />
+          </label>
+          <button onClick={handleOpen}>Agregar</button>
+        </div>
+        <section className="List__container__table">
+          <DataGrid rows={rows} columns={columns} rowsPerPageOptions={[5, 10, 25]} pageSize={pageSize} onPageSizeChange={(newPageSize) => setPageSize(newPageSize)} />
+        </section>
+      </article>
     </Layout>
   );
 }
