@@ -72,9 +72,8 @@ export default function Places() {
             Swal.fire({
               icon: 'error',
               title: 'Oops...',
-              text: 'Algo salió mal!',
+              text: 'No puedes eliminar lugares con mutantes activos',
             });
-            console.error(e);
           });
       }
     });
