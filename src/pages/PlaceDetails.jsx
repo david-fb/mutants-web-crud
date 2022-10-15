@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getPlaceById } from '../services/api/places';
+import { useNavigate } from 'react-router-dom';
 import MutantsGrid from '../components/MutantsGrid';
 import Layout from '../components/Layout';
 import '../styles/DetailsPages.css';
@@ -8,11 +9,16 @@ import '../styles/DetailsPages.css';
 export default function PlaceDetails() {
   let { id } = useParams();
   const [place, setPlace] = useState({});
+  const navigate = useNavigate();
 
   useEffect(() => {
     const getData = async () => {
-      const res = await getPlaceById(id);
-      setPlace(res);
+      try {
+        const res = await getPlaceById(id);
+        setPlace(res);
+      } catch (error) {
+        navigate('/');
+      }
     };
     getData();
   }, []);

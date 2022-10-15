@@ -1,17 +1,23 @@
 import { useParams, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getVehicleById } from '../services/api/vehicles';
+import { useNavigate } from 'react-router-dom';
 import MutantsGrid from '../components/MutantsGrid';
 import Layout from '../components/Layout';
 
 export default function VehicleDetails() {
   let { id } = useParams();
   const [vehicle, setVehicle] = useState({});
+  const navigate = useNavigate();
 
   useEffect(() => {
     const getData = async () => {
-      const res = await getVehicleById(id);
-      setVehicle(res);
+      try {
+        const res = await getVehicleById(id);
+        setVehicle(res);
+      } catch (error) {
+        navigate('/');
+      }
     };
     getData();
   }, []);

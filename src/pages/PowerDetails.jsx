@@ -1,18 +1,23 @@
 import { useParams, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getPowerById } from '../services/api/powers';
+import { useNavigate } from 'react-router-dom';
 import MutantsGrid from '../components/MutantsGrid';
 import Layout from '../components/Layout';
 
 export default function PowerDetails() {
   let { id } = useParams();
   const [power, setPower] = useState({});
+  const navigate = useNavigate();
 
   useEffect(() => {
     const getData = async () => {
-      const res = await getPowerById(id);
-      console.log(res);
-      setPower(res);
+      try {
+        const res = await getPowerById(id);
+        setPower(res);
+      } catch (error) {
+        navigate('/');
+      }
     };
     getData();
   }, []);
