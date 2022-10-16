@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { getVehicleById } from '../services/api/vehicles';
 import { useNavigate } from 'react-router-dom';
 import MutantsGrid from '../components/MutantsGrid';
+import LeftArrow from '../assets/LeftArrow';
 import Layout from '../components/Layout';
 
 export default function VehicleDetails() {
@@ -26,6 +27,7 @@ export default function VehicleDetails() {
     <Layout>
       <article className="Details__container">
         <Link className="Details__back-link" to={-1}>
+          <LeftArrow />
           Volver
         </Link>
         <h1 className="Details__container__title">{vehicle.name}</h1>

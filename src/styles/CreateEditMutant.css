@@ -10,6 +10,13 @@
 .Create__back-link {
     color: #fff;
     align-self: flex-start;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid transparent;
+}
+
+.Create__back-link:hover {
+    border-color: #fff;
 }
 
 .Create__title {

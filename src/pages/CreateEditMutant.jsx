@@ -8,7 +8,7 @@ import CloseIcon from '../assets/CloseIcon';
 import Layout from '../components/Layout';
 import Swal from 'sweetalert2';
 import '../styles/CreateEditMutant.css';
-// import { toast } from 'react-toastify';
+import LeftArrow from '../assets/LeftArrow';
 
 const showSuccessAlert = (msg) => {
   Swal.fire({
@@ -137,6 +137,7 @@ export default function CreateEditMutant() {
     <Layout>
       <section className="CreateEditMutant">
         <Link className="Create__back-link" to={-1}>
+          <LeftArrow />
           Volver
         </Link>
         <h1 className="Create__title">{title} Mutante</h1>

@@ -4,6 +4,7 @@ import { getMutantById, deleteMutant } from '../services/api/mutants';
 import { useNavigate } from 'react-router-dom';
 import Layout from '../components/Layout';
 import Swal from 'sweetalert2';
+import LeftArrow from '../assets/LeftArrow';
 import '../styles/Mutant.css';
 
 export default function Mutant() {
@@ -63,7 +64,7 @@ export default function Mutant() {
     <Layout>
       <article className="Mutant">
         <Link className="Mutant__Back-Link" to={-1}>
-          {'<-- Volver'}
+          <LeftArrow /> Volver
         </Link>
         <section className="Mutant__Content">
           <img src={mutant?.image} alt={mutant?.name} />

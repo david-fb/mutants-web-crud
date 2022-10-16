@@ -10,8 +10,15 @@
 .Mutant__Back-Link {
     color: #fff;
     font-weight: bold;
-    padding: 8px 16px;
     align-self: flex-start;
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    border-bottom: 1px solid transparent;
+}
+
+.Mutant__Back-Link:hover {
+    border-bottom: 1px solid #fff;
 }
 
 .Mutant__Content {

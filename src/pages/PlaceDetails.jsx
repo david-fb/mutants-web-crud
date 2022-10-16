@@ -4,6 +4,7 @@ import { getPlaceById } from '../services/api/places';
 import { useNavigate } from 'react-router-dom';
 import MutantsGrid from '../components/MutantsGrid';
 import Layout from '../components/Layout';
+import LeftArrow from '../assets/LeftArrow';
 import '../styles/DetailsPages.css';
 
 export default function PlaceDetails() {
@@ -27,6 +28,7 @@ export default function PlaceDetails() {
     <Layout>
       <article className="Details__container">
         <Link className="Details__back-link" to={-1}>
+          <LeftArrow />
           Volver
         </Link>
         <h1 className="Details__container__title">{place.name}</h1>

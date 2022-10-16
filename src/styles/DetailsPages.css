@@ -11,6 +11,12 @@
     color: #fff;
     align-self: flex-start;
     margin-top: 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid transparent;
+}
+.Details__back-link:hover {
+    border-bottom: 1px solid #fff;
 }
 
 .Details__container__title {
