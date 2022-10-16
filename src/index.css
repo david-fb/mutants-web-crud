@@ -25,7 +25,11 @@
   flex-direction: column;
   width: 100%;
   min-height: 100vh;
-  background: #121212;
+}
+
+body {
+  background-image: url('../public/grain-dark.png');
+  background-color: #121212;
 }
 
 a {
