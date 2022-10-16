@@ -6,7 +6,7 @@ export default function MutantsGrid({ mutants = [] }) {
     const type = mutant?.type === 'hero' ? 'Héroe' : 'Villano';
     return (
       <Link to={`/mutant/${mutant.id}`} key={`mutant-${mutant.id}`} className="MutantsGrid__item">
-        <img src={mutant.image} alt={mutant.name} />
+        <img src={mutant.image} alt={mutant.name} loading="lazy" />
         <div className="MutantsGrid__item-info">
           <p className="MutantsGrid__item-info__type">{type}</p>
           <h3 className="MutantsGrid__item-info__alias">{mutant.alias}</h3>
