@@ -8,10 +8,13 @@
     display: flex;
     gap: 16px;
     justify-content: flex-start;
+
+    background: -webkit-linear-gradient(60deg, rgb(253, 207, 2), rgb(255, 72, 0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .Nav__menu__item a {
-    color: rgb(253, 207, 2);
     font-size: 18px;
     border-bottom: 1px solid transparent;
 }
