@@ -1,4 +1,5 @@
 import Nav from './Nav';
+import Footer from './Footer';
 import '../styles/Layout.css';
 
 export default function Layout({ children }) {
@@ -6,6 +7,7 @@ export default function Layout({ children }) {
     <>
       <Nav />
       <main className="Main">{children}</main>
+      <Footer />
     </>
   );
 }

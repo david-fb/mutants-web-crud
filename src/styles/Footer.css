@@ -1,0 +1,23 @@
+.Footer {
+    display: flex;
+    margin-top: auto;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 8px;
+    flex-direction: column;
+    background: -webkit-linear-gradient(60deg, rgb(253, 207, 2), rgb(255, 72, 0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.Footer div{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.Footer div ul {
+    display: flex;
+    gap: 8px;
+    list-style: none;
+}
