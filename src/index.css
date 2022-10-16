@@ -54,3 +54,9 @@ input {
   color: #000;
   outline: none;
 }
+
+@media (prefers-color-scheme: dark) {
+  input {
+    color: #fff;
+  }
+}
